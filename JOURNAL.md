@@ -64,3 +64,35 @@ I added `tests/unit/test_migrations.py` — static checks over the migration his
 **Self-review confirmation:** [X] make check passes  [X] make test-unit passes
 
 **Draft PR feedback received from:** none
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [X] No — still awaiting review
+
+**Summary of feedback:**
+No review came in.
+
+**How you responded:**
+No feedback was given.
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+What I found to be much harder than expected was understanding the how the internsection between the codebase and the workflow functioned. To be able to write the script that would verify the migrations I needed to understand how the codebase configuration was handling its drivers and variables. This was already challenging to understand but was necessary as understanding how to build the script was dependant on how well my codebase understanding was. 
+
+**What did you learn about working in a large codebase?**
+Working with a larger codebase is vastly different from just working on your own project. With your own project its much easier to firstly understand what is being built since you are building it presumably from scratch but also you are allowed to be more dynamic with what is added to the project since you are in complete control of its concept and direction. Working on someone else's production instead requires you to understand the workflow and the scripts that are being used. This means that it requires much more time to read and understand what exactly you are working with. Also, since it is not your project whatever you want to contribute is usually a problem already flagged so that it could be fixed or you are working within the confines of the owner's ideas. 
+
+**How did AI tools help — and where did they fall short?**
+I think that AI assistance was most useful in terms of understanding the pre-existing workflow and scripts. Esspecially since I primarily use claude code, it is able to go through all the files and give me a better explanation of how every file interacts than may be provided in the `README.md`. However, this doesn't mean that it replaces reading the files themselves and taking sometime to understand how certain scripts interact. Many times that are comments left by the codebase's owner that are worth reading yourself. I do think that is one instance where you may still want to use AI initially for the broad stroke ideas and then go in and read the files yourself. I also think for understanding things the SQLAlchemy or Alembic using other resources beyond AI was extremely crucial and helpful. 
+
+**What would you do differently if you started over?**
+If I were to start over, I think that I would focus differently in testing. I think that I could've produced a better tests script for the `scripts/validate_migrations.sh` since they currently only focus on structural invariants. Next time I would create a script that also focuses on capturing end-to-end verification in one repeatable step. I'd also like to improve upon my planning. I think I would've liked to have a more thorough `PLAN.md`. I just feel that by having a more thorough plan I could understand my goals and how I was planning to accomplish these goals. What I mean by this is that instead of just saying "Write `scripts/validate_migrations.sh`. It reads the `DATABASE_URL` from the environment and runs, in order: `alembic upgrade head` (applies all migrations, fails if one is broken), and `alembic check` (compares the schema to the models and fails if there's drift)" I will instead be more descriptive and say more specifically it will read `DATABASE_URL`. A more descriptive plan will simply be better since it will allow me to remember intricate details of the plan even if I step away from it for a few days. 
+
+**What are you most proud of from this module?**
+[One thing — it doesn't have to be the PR itself.]
+I think that I am most proud of my implementation. This is because a lot of the concepts and tools used in the workflow were unfamiliar to me and so I did have to take the time to learn them. Despite the challenge of learning these concepts, I was still able to develop a solid contribution that is fully functional. I am most proud of my ability to adapt to the challenges that I wasn't necissarly expecting with the workflow and being able to produce a good script. 
